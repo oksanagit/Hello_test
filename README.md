@@ -6,7 +6,7 @@ Building an EPICS Control System from scratch could be a tedious, time consuming
 We offer you an out of the box solution, when you buy and assemble Single Board Computer, load  precreated image onto microSD card, boot the discless babyIOC computer from this microSD card and build your EPICS iocs using prebuild libraries and packages. If community finds this useful, we can add more sample iocs to ease the learning curve, NSLS2 DAMA bluesky suit, etc.
  
  ## Hardware and parts
-The selected hardware is [UDOO x86 board](https://shop.udoo.org/x86/udoo-x86-ultra.html), which can be enhanced with different daughter cards. In this project we use ethernet daughter card, which adds 2 additional interfaces useful in any controls environment.  Though the hardware can be purchased from many distributors, we advise buying directly from [UDOO](https://shop.udoo.org/). They ship fast. 
+The selected hardware is [UDOO x86 Ultra board](https://shop.udoo.org/x86/udoo-x86-ultra.html), which can be enhanced with different daughter cards. In this project we use ethernet daughter card, which adds 2 additional interfaces useful in any controls environment.  Though the hardware can be purchased from many distributors, we advise buying directly from [UDOO](https://shop.udoo.org/). They ship fast. 
 
 Parts list:
 - UDOO x86 Ultra
@@ -19,7 +19,12 @@ Parts list:
 
 
 ## Assemble the hardware. 
+Vendor's instructions how to assemble the hardware can be found [here](https://www.udoo.org/docs-x86/Hardware_&_Accessories/Official_Accessories.html). Vendor's metal case is desiged to hold a board without accesories. In order to use this metal case with ethernet daughter board, one needs to cut an opening in the back side. The needed cut out is indicated on [this]() drowing.   
 
 ## Copy image onto microSD card. 
 	
 
+
+## Credits
+* 
+*
