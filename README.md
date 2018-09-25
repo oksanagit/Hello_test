@@ -1,5 +1,5 @@
 # babyIOC
-babyIOC is easy to assemble plug and play Debian server with installed latest NSLS2 EPICS Debian distribution, compiled areaDetector package with prosilica sample IOC deployed at /epics/iocs.  NSLS2 Epics Debian distribution is built from community epicsdeb repository and deployed at /usr/lib/epics/ 
+babyIOC is easy to assemble plug and play Debian server with installed latest NSLS2 EPICS Debian distribution, compiled areaDetector package with prosilica sample IOC deployed at /epics/iocs.  NSLS2 Epics Debian distribution is built from community epicsdeb repository and deployed at /usr/lib/epics/. X2Go server is intsalled on this system.  
 
 ## Introduction
 Building an EPICS Control System from scratch could be a tedious, time consuming and challenging for the beginners.
