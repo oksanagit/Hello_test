@@ -83,7 +83,17 @@ Device     Boot    Start      End  Sectors  Size Id Type
   2. Delete by pressin "d" and accepting the default suggestion 5, them 2, then 1.
   3. Press "n" to create new partion, 'p' for primary,Last  1, offered default, fist sector offered 2048,since you have to perserve your boot partion beginning, and accept default for your last sector. Your total size is less then you expected, SD card vendors a bit creative with the size definition.
   4. press w to write changes and exit
-
+  
+  Now you need to resize your file system to use all available space. If you run #resize2fs /dev/sdb1, you will be aske to run e2fsck first.
+  <pre><code>
+  #e2fsck -f /dev/sdb1
+  </code></pre>
+press y (for yes) for offers to correct the errors
+ <pre><code>
+  #resize2fs  /dev/sdb1
+  </code></pre>
+  
+  You are ready to boot!
 ## Credits
 * Christopher Stelmach, BNL for adding cutout to the drawing.
 *
