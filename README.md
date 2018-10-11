@@ -40,7 +40,7 @@ Copy image to microSD card. You should become root.
 <pre><code>
 hhh
 </code></pre>
-
+Word of warning: dd command will happily overwrite your system's hard drive if you use the wrong /dev/sdX and it won't warn you or anything since you are root. Always double check the dd commands! dd stands for Disk Destroyer.
 ## Credits
 * Christopher Stelmach, BNL for adding cutout to the drawing.
 *
