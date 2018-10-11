@@ -10,7 +10,6 @@ The selected hardware is [UDOO x86 Ultra board](https://shop.udoo.org/x86/udoo-x
 
 Parts list:
 - UDOO x86 Ultra
-  - hdjfhaljkf
 - UDOO x86 metal case
 - CPU fan for UDOO x86 heatsink 
 - M.2 dual Ethernet Module Kit
@@ -23,10 +22,24 @@ Vendor's instructions how to assemble the hardware can be found [here](https://w
 
 ## Copy image onto microSD card. 
 - plug in  microSD card into your linux box. We used microSD-miniSD-USB dungle
+run cat /proc/partitions to see what the device name is. It ussualy come up as /dev/sdb
 <pre><code> 
-jdfhaj
-</code></pre>
+oksana@oksana-linux:~$ cat /proc/partitions
+major minor  #blocks  name
 
+   8        0  244140625 sda
+   8        1  234219520 sda1
+   8        2          1 sda2
+   8        5    9918464 sda5
+   8       16  122241024 sdb
+   8       17  121634816 sdb1
+   8       18          1 sdb2
+   8       21     604160 sdb5
+</code></pre>
+Copy image to microSD card. You should become root.
+<pre><code>
+hhh
+</code></pre>
 
 ## Credits
 * Christopher Stelmach, BNL for adding cutout to the drawing.
