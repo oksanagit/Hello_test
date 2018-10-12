@@ -1,12 +1,11 @@
 
-
+# babyIOC
+babyIOC is easy to assemble plug and play Debian server with latest NSLS2 EPICS Debian distribution installed, compiled areaDetector package. Prosilica sample IOC is deployed at /epics/iocs. NSLS2 Epics Debian distribution is built from community epicsdeb repository and deployed at /usr/lib/epics/. X2Go server is installed on this system.  
 
 # current Image details
 - Debian jessie
 - NSLS2 EPICS Debian distribution in /urs/lib/epics
 - areaDetector-3-3-1 package 
-# babyIOC
-babyIOC is easy to assemble plug and play Debian server with latest NSLS2 EPICS Debian distribution installed, compiled areaDetector package. Prosilica sample IOC is deployed at /epics/iocs. NSLS2 Epics Debian distribution is built from community epicsdeb repository and deployed at /usr/lib/epics/. X2Go server is installed on this system.  
 
 ## Introduction
 Building an EPICS Control System from scratch could be a tedious, time consuming and challenging for the beginners.
@@ -99,6 +98,7 @@ press y (for yes) for offers to correct the errors
 Connect a monitor, we used HDMI port, a mouse and keyboard. we used one USB doungle for both periferals. When you power the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
 <img src=images/IMG_1.JPG width="40%">
+- Select Boot Manager. Inside you have to chooselegasy boot option. We have seen different screens for this:
 
 
 ## Credits
