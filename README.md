@@ -57,7 +57,7 @@ Word of warning: dd command will happily overwrite your system's hard drive if y
 
 You can plug your microSD card and boot, however if your microSD card size was more then 16GB, you will not be able to use it at this time.
 
-# Extend your disc partition
+## Extend your disc partition
 we used this website as a resource.
 The commands below will output information about all your partitions. We will include only the one we are resizing.
 <pre><code>
@@ -93,7 +93,8 @@ press y (for yes) for offers to correct the errors
   #resize2fs  /dev/sdb1
   </code></pre>
   
-  You are ready to boot!
+## You are ready to boot!
+Connect a monitor, we uses HDMI port, a mause and keyboard
 ## Credits
 * Christopher Stelmach, BNL for adding cutout to the drawing.
 *
