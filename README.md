@@ -1,3 +1,6 @@
+
+
+
 # current Image details
 - Debian jessie
 - NSLS2 EPICS Debian distribution in /urs/lib/epics
@@ -95,7 +98,9 @@ press y (for yes) for offers to correct the errors
 ## You are ready to boot!
 Connect a monitor, we used HDMI port, a mouse and keyboard. we used one USB doungle for both periferals. When you power the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
-![Alt text](https://github.com/oksanagit/babyIOC/images/IMG_1.JPG "Optional title")
+<img src=images/IMG_1.JPG width="40%">
+
+
 ## Credits
 * Christopher Stelmach, BNL for adding cutout to the drawing.
 *
