@@ -1,9 +1,9 @@
 # current Image details
 - Debian jessie
 - NSLS2 EPICS Debian distribution in /urs/lib/epics
--areaDetector-3-3-1 package with 
+- areaDetector-3-3-1 package 
 # babyIOC
-babyIOC is easy to assemble plug and play Debian server with installed latest NSLS2 EPICS Debian distribution, compiled areaDetector package with prosilica sample IOC deployed at /epics/iocs.  NSLS2 Epics Debian distribution is built from community epicsdeb repository and deployed at /usr/lib/epics/. X2Go server is intsalled on this system.  
+babyIOC is easy to assemble plug and play Debian server with latest NSLS2 EPICS Debian distribution installed, compiled areaDetector package. Prosilica sample IOC is deployed at /epics/iocs. NSLS2 Epics Debian distribution is built from community epicsdeb repository and deployed at /usr/lib/epics/. X2Go server is installed on this system.  
 
 ## Introduction
 Building an EPICS Control System from scratch could be a tedious, time consuming and challenging for the beginners.
@@ -78,13 +78,12 @@ Device     Boot    Start      End  Sectors  Size Id Type
   We would like to extend Linux partion, which happened to be the boot partition as well, and the only way to do this is to delete all partions, and recreate them again.
   <pre><code>
   # fdisk /dev/sdb
-  </code></pre>
-  1. 
-  2. Delete by pressin "d" and accepting the default suggestion 5, them 2, then 1.
-  3. Press "n" to create new partion, 'p' for primary,Last  1, offered default, fist sector offered 2048,since you have to perserve your boot partion beginning, and accept default for your last sector. Your total size is less then you expected, SD card vendors a bit creative with the size definition.
-  4. press w to write changes and exit
+  </code></pre> 
+  1. Delete by pressing "d" and accepting the default suggestion 5, them 2, then 1.
+  2. Press "n" to create new partion, 'p' for primary,Last  1, offered default, fist sector offered 2048,since you have to perserve your boot partion beginning, and accept default for your last sector. Your total size is less then you expected, SD card vendors a bit creative with the size definition.
+  3. press w to write changes and exit
   
-  Now you need to resize your file system to use all available space. If you run #resize2fs /dev/sdb1, you will be aske to run e2fsck first.
+  Now you need to resize your file system to use all available space. If you run #resize2fs /dev/sdb1, you will be asked to run e2fsck first.
   <pre><code>
   #e2fsck -f /dev/sdb1
   </code></pre>
