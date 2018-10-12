@@ -99,7 +99,19 @@ Connect a monitor, we used HDMI port, a mouse and keyboard. we used one USB doun
 - Keep pressing Esc button, while power is applied. 
 <img src=images/IMG_1.JPG width="40%">
 - Select Boot Manager. Inside you have to chooselegasy boot option. We have seen different screens for this:
-
+<div class="row">
+  <div class="column">
+     <img src=images/IMG_2.JPG width="37%">  
+  </div>
+ <div class="column">
+  <p>
+      
+  </p>
+  </div>
+  <div class="column">
+    <img src=images/IMG_3.JPG width="40%">
+  </div>
+  </div>
 
 ## Credits
 * Christopher Stelmach, BNL for adding cutout to the drawing.
