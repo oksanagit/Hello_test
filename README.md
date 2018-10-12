@@ -14,10 +14,10 @@ We offer you an out of the box solution, when you buy and assemble Single Board 
  ## [Assemble the Hardware](HARDWARE.md)
 
 
-## [Copy image onto microSD card](microSDimage.md) 
+## [Copy Image onto microSD Card](microSDimage.md) 
 
   
-## You are ready to boot!
+## [You are ready to boot!](readyToBoot.md)
 Connect a monitor, we used HDMI port, a mouse and keyboard. we used one USB doungle for both periferals. When you power the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
 <img src=images/IMG_1.JPG width="40%">
