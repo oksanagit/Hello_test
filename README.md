@@ -47,6 +47,18 @@ Parts list:
 
 ## [Reconfiguring network interfaces](NETWORK.md)
 
+## Refferences
+- [babyIOC contribution @ EPICS collaboration meeting 2018 in APS](https://epics.anl.gov/meetings/2018-06/talks/06-14/PM/7.11.pdf)
+- [EPICS Debian source](https://github.com/epicsdeb)
+- [NSLS2 EPICS Debian repository](https://epicsdeb.bnl.gov/debian/)
+- [areaDetector package](https://github.com/areaDetector/)
+
 ## Credits
-* Christopher Stelmach, BNL for adding cutout to the drawing.
+* Thomas Smith (BNL) sysadmin project father, 
+* Dennis Poshka (BNL) project technician
+* Leon Flaks (BNL) image purification for community 
+* Matt Cowan (BNL) sysadmin help
+* Kevin Peterson (ANL) directions in disc size expention
+* 28ID1, Milinda Abeykoon, Julian Adams (BNL) for project support
+* Christopher Stelmach (BNL) drawing modification to add a cutof
 *
