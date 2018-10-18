@@ -138,7 +138,7 @@ press y (for yes) for offers to correct the errors
   #resize2fs  /dev/sdb1
   </code></pre>
   
-##<a name="boot"></a> Your fist Boot  
+## <a name="boot"></a> Your fist Boot  
 Connect a monitor, we used HDMI port, a mouse and keyboard. we used one USB doungle for both periferals. When you power the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
 <img src=images/IMG_1.JPG width="40%">
