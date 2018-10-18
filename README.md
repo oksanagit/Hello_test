@@ -52,7 +52,7 @@ Parts list:
   
 ## [You are ready to boot!](#boot)
 
-## [Reconfiguring network interfaces](NETWORK.md)
+## [Reconfiguring network interfaces](#network)
 
 ## Refferences
 - [babyIOC contribution @ EPICS collaboration meeting 2018 in APS](https://epics.anl.gov/meetings/2018-06/talks/06-14/PM/7.11.pdf)
@@ -163,3 +163,20 @@ Connect a monitor, we used HDMI port, a mouse and keyboard. we used one USB doun
   </div>
 
 Your boot is set!
+## <a name="network"></a> Reconfiguring network interfaces
+**babyIOC** image has DHCP configured interfaces, you can reconfigure them to your taste in /etc/network/interfaces. 
+
+In any case delete content in  
+/etc/udev/rules.d/70-persistent-net.rules. 
+
+This file is being created by operating system and includes mac address of your Ethernet cards. Since you have a new hardware, new interfaces will be created.
+
+## Changing the host name:
+
+-Edit the hostname in these files
+/etc/hostname
+/etc/mailname (might not exist)
+/etc/hosts
+
+**Reboot**
+## Enjoy!
