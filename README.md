@@ -1,11 +1,12 @@
 
 # babyIOC
-babyIOC is easy to assemble plug and play Debian server with latest NSLS2 EPICS Debian distribution installed and compiled areaDetector package. Prosilica sample IOC is deployed at /epics/iocs. NSLS2 Epics Debian distribution is built from community epicsdeb repository and deployed at /usr/lib/epics/. X2Go server is installed on this system.  
+Motivation of **_babyIOC_** is to create a portable small form factor control system solution for mobile experimental stations and test systems.  
+**_babyIOC_** is easy to assemble plug and play Debian server with deployed [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), compiled  [areaDetector]( https://github.com/areaDetector) package, and NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) Data Acquisition Suite. Prosilica sample IOC is deployed at /epics/iocs.  
 
 # current Image details
 - Debian Jessie
-- NSLS2 EPICS Debian distribution in /urs/lib/epics
-- areaDetector-3-3-1 with
+- [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), which is built from [epicsdeb](https://github.com/epicsdeb) repository. 
+- areaDetector-3-3-1 with  
 <ul>
  <ul>
   <li>epics-base R7.0.1.1</li>
@@ -18,7 +19,11 @@ babyIOC is easy to assemble plug and play Debian server with latest NSLS2 EPICS 
   <li>calc R3.7</li>
   <li>ioc-stats R3.1.15</li>
 </ul>
-</ul>
+ </ul>
+ 
+- X2Go server  
+- NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) software suit
+
  
 
 ## Introduction
@@ -37,7 +42,7 @@ Parts list:
 - microSD memory card 16GB or bigger 
 
  
- ## [Assemble the Hardware](HARDWARE.md)
+ ## [Assemble the Hardware](#some-id)
 
 
 ## [Copy Image onto microSD Card](microSDimage.md) 
@@ -62,3 +67,6 @@ Parts list:
 * 28ID1, Milinda Abeykoon, Julian Adams (BNL) for project support
 * Christopher Stelmach (BNL) drawing modification to add a cutof
 *
+# <a name="some-id"></a> DETAIL SECTION
+## Assemble the hardware. 
+Vendor's instructions how to assemble the hardware can be found [here](https://www.udoo.org/docs-x86/Hardware_&_Accessories/Official_Accessories.html). Vendor's metal case is desiged to hold a board without accesories. In order to use this metal case with ethernet daughter board, one needs to cut an opening in the back side. The original drawing can be found [here](http://download.udoo.org/files//UDOO_X86/mechanical_specs/UDOO_X86_metal_case_drawing.pdf). The needed cut out is indicated on UDOO_X86_metal_case_drawing-MODIFIED.pdf.   
