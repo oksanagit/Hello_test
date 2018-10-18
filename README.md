@@ -3,7 +3,7 @@
 Motivation of **_babyIOC_** is to create a portable small form factor control system solution for mobile experimental stations and test systems.  
 **_babyIOC_** is easy to assemble plug and play Debian server with deployed [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), compiled  [areaDetector]( https://github.com/areaDetector) package, and NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) Data Acquisition Suite. Prosilica sample IOC is deployed at /epics/iocs.  
 
-# current Image details
+# Current Image details
 - Debian Jessie
 - [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), which is built from [epicsdeb](https://github.com/epicsdeb) repository. 
 - areaDetector-3-3-1 with  
@@ -28,8 +28,10 @@ Motivation of **_babyIOC_** is to create a portable small form factor control sy
 
 ## Introduction
 Building an EPICS Control System from scratch could be a tedious, time consuming and challenging for the beginners.
-We offer you an out of the box solution, when you buy and assemble Single Board Computer, load  precreated image onto microSD card, boot the discless babyIOC computer from this microSD card and build your EPICS iocs using prebuild libraries and packages. If community finds this useful, we can add more mudules, sample iocs to ease the learning curve, as well as NSLS2 DAMA bluesky suit, etc.
+We offer you an out of the box solution, when you buy and assemble Single Board Computer, load  precreated image onto microSD card, boot the discless babyIOC computer from this microSD card and build your EPICS iocs using prebuild libraries and packages. If community finds this useful, we can add more mudules, sample iocs to ease the learning curve etc. The image also has NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) software deployed for those who are intersted to try it out.
  ## Hardware and parts
+We have conducted a research, reviewing many vendors which offer small factor Single Board Computes(SBC) including Beagleboard, RaspberryPI, BoundaryDevices, Nvidia, Hardkernel, PCengineering, EmbeddedArm, Udoo.  
+  
 The selected hardware is [UDOO x86 Ultra board](https://shop.udoo.org/x86/udoo-x86-ultra.html), which can be enhanced with different daughter cards. In this project we use ethernet daughter card, which adds 2 additional interfaces useful in any controls environment.  Though the hardware can be purchased from many distributors, we advise buying directly from [UDOO](https://shop.udoo.org/). They ship fast. 
 
 Parts list:
@@ -59,21 +61,22 @@ Parts list:
 - [areaDetector package](https://github.com/areaDetector/)
 
 ## Credits
-* Thomas Smith (BNL) sysadmin project father, 
+* Thomas Smith (BNL) sysadmin project father 
 * Dennis Poshka (BNL) project technician
-* Leon Flaks (BNL) image purification for community 
+* Leon Flaks (BNL) image conditioning for community 
+* Thomas Caswell (BNL) bluesky deployment
 * Matt Cowan (BNL) sysadmin help
-* Kevin Peterson (ANL) directions in disc size expention
-* 28ID1, Milinda Abeykoon, Julian Adams (BNL) for project support
-* Christopher Stelmach (BNL) drawing modification to add a cutof
-*
+* Kevin Peterson (ANL) ideass in disc size expention
+* 28ID1, Milinda Abeykoon, Julian Adams (BNL) project support
+* Christopher Stelmach (BNL) drawing modification to add a cutof  
+  
 # DETAIL SECTION
 ##  <a name="hardware"></a> Assemble the hardware. 
-Vendor's instructions how to assemble the hardware can be found [here](https://www.udoo.org/docs-x86/Hardware_&_Accessories/Official_Accessories.html). Vendor's metal case is desiged to hold a board without accesories. In order to use this metal case with ethernet daughter board, one needs to cut an opening in the back side. The original drawing can be found [here](http://download.udoo.org/files//UDOO_X86/mechanical_specs/UDOO_X86_metal_case_drawing.pdf). The needed cut out is indicated on UDOO_X86_metal_case_drawing-MODIFIED.pdf. 
+Vendor's instructions how to assemble the hardware can be found [here](https://www.udoo.org/docs-x86/Hardware_&_Accessories/Official_Accessories.html). Vendor's metal case is desiged to hold a board without accesories. In order to use this metal case with Ethernet daughter board, one needs to cut an opening in the back side. The original drawing can be found [here](http://download.udoo.org/files//UDOO_X86/mechanical_specs/UDOO_X86_metal_case_drawing.pdf). The needed cut out is indicated on [UDOO_X86_metal_case_drawing-MODIFIED.pdf](UDOO_X86_metal_case_drawing-MODIFIED.pdf). 
 
 ## <a name="microSD"></a>Copy image onto microSD card. 
-- plug in  microSD card into your linux box. We used microSD-miniSD-USB dungle
-run cat /proc/partitions to see what the device name is. It ussualy come up as /dev/sdb
+- plug in  microSD card into your linux box. We used microSD-miniSD-USB dungle.  
+- run cat /proc/partitions to see what the device name is. It ussualy come up as /dev/sdb
 <pre><code> 
 oksana@oksana-linux:~$ cat /proc/partitions
 major minor  #blocks  name
@@ -87,7 +90,7 @@ major minor  #blocks  name
    8       18          1 sdb2
    8       21     604160 sdb5
 </code></pre>
-Copy image to microSD card. You should become root.
+Copy image onto microSD card. You should become root.
 <pre><code>
 root@oksana-linux:/home/oksana# date; dd if=udooImage of=/dev/sdb bs=64k; date
 Thu Oct 11 15:11:48 EDT 2018
@@ -96,16 +99,15 @@ Thu Oct 11 15:11:48 EDT 2018
 15931539456 bytes (16 GB) copied, 597.654 s, 26.7 MB/s
 Thu Oct 11 15:21:45 EDT 2018
 root@oksana-linux:/home/oksana# 
-
-You are ready to 
+  
 </code></pre>
-Word of warning: dd command will happily overwrite your system's hard drive if you use the wrong /dev/sdX and it won't warn you or anything since you are root. Always double check the dd commands! dd stands for Disk Destroyer.
+**Word of warning:** *_dd command will happily overwrite your system's hard drive if you use the wrong /dev/sdX and it won't warn you or anything since you are root._* Always double check the dd commands! dd stands for Disk Destroyer.
 
 You can plug your microSD card and boot, however if your microSD card size was more then 16GB, you will not be able to use it at this time.
 
-## Extend your disc partition
-we used this website as a resource.
-The commands below will output information about all your partitions. We will include only the one we are resizing.
+## Extend your disc partition and file system.
+We used [this link](http://www.runeaudio.com/documentation/troubleshooting/extend-partition-sd/) as a resource.
+The commands below will output information about all your partitions. We will show outputs only the partition which is being resized.
 <pre><code>
 root@oksana-linux:/home/oksana# fdisk -l
 ......
@@ -121,7 +123,7 @@ Device     Boot    Start      End  Sectors  Size Id Type
 /dev/sdb2       29749246 31115263  1366018  667M  5 Extended
 /dev/sdb5       29749248 31115263  1366016  667M 82 Linux swap / Solaris
 </code></pre>
-  We would like to extend Linux partion, which happened to be the boot partition as well, and the only way to do this is to delete all partions, and recreate them again.
+  Since we want to extend Linux partion, which happened to be the boot partition as well, the only way to do this is to delete all partions, and recreate them again.
   <pre><code>
   # fdisk /dev/sdb
   </code></pre> 
@@ -129,6 +131,7 @@ Device     Boot    Start      End  Sectors  Size Id Type
   2. Press "n" to create new partion, 'p' for primary,Last  1, offered default, fist sector offered 2048,since you have to perserve your boot partion beginning, and accept default for your last sector. Your total size is less then you expected, SD card vendors a bit creative with the size definition.
   3. press w to write changes and exit
   
+  You do not need to create swap partition because the image file has a swap file configured as a part of the system. 
   Now you need to resize your file system to use all available space. If you run #resize2fs /dev/sdb1, you will be asked to run e2fsck first.
   <pre><code>
   #e2fsck -f /dev/sdb1
@@ -138,12 +141,14 @@ press y (for yes) for offers to correct the errors
   #resize2fs  /dev/sdb1
   </code></pre>
   
+  You are ready to boot now!
+  
 ## <a name="boot"></a> Your fist Boot  
 Connect a monitor, we used HDMI port, a mouse and keyboard. we used one USB doungle for both periferals. When you power the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
 <img src=images/IMG_1.JPG width="40%">
 
-- Select Boot Manager. Inside you have to choose legacy boot option. We have seen different screens for this:
+- Select **Boot Manager**. Inside you have to choose legacy boot option. We have seen different screens for this step on identical board units we purchased at different times:
 
 <div class="row">
   <div class="column">
