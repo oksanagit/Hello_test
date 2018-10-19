@@ -51,7 +51,8 @@ Parts list:
 
   
 ## [You are ready to boot!](#boot)
-
+root -   "babyIOCroot"  
+iocuser -"$babyioc$"
 ## [Reconfiguring network interfaces](#network)
 
 ## References
@@ -61,12 +62,13 @@ Parts list:
 - [areaDetector package](https://github.com/areaDetector/)
 
 ## Credits
-* Thomas Smith (BNL) sysadmin project father 
-* Dennis Poshka (BNL) project technician
-* Leon Flaks (BNL) image conditioning for community 
+* Oksana Ivashkevych (BNL) vision, driver, babyIOC mother
+* Thomas Smith (BNL) sysadmin babyIOC father 
+* Dennis Poshka (BNL) babyIOC technician
+* Leon Flaks (BNL) image conditioning, project hosting @[https://epicsdeb.bnl.gov/babyIOC](https://epicsdeb.bnl.gov/babyIOC/)
 * Thomas Caswell (BNL) bluesky deployment
 * Matt Cowan (BNL) sysadmin help
-* Kevin Peterson (ANL) ideas in disc size expansion
+* Kevin Peterson (ANL) ideas for disc size expansion
 * 28ID1, Milinda Abeykoon, Julian Adams (BNL) project support
 * Christopher Stelmach (BNL) drawing modification to add a cutoff  
   
@@ -131,7 +133,7 @@ Device     Boot    Start      End  Sectors  Size Id Type
   2. Press "n" to create new partion, 'p' for primary,Last  1, offered default, fist sector offered 2048, since you have to perserve your boot partion beginning, and accept default for your last sector. Your total size will most likely be less then you expected, SD card vendors are a bit creative with the size definition.
   3. press w to write changes and exit
   
-  You do not need to create swap partition because the image file has a swap file configured as a part of the system. The swap file size is a relatively small 1GB to conserve space for a 16GB SD card. You can resize the swap file to your liking if you need  more swap space, but it must be done on a running system. Instructions for this are at the end
+  You do not need to create swap partition because the image file has a swap file configured as a part of the system. The swap file size is a relatively small 1GB to conserve space for a 16GB SD card. You can resize the swap file to your liking if you need  more swap space, but it must be done on a running system. Please follow [this instructions](#swap).
   
   Now you need to resize your file system to use all available space on your SD card. If you run #resize2fs /dev/sdb1, you will be asked to run e2fsck first.
   <pre><code>
@@ -181,7 +183,7 @@ This file is being created by operating system and includes mac address of your 
 
 **Reboot**
 
-## Resize swap file
+## <a name="swap"></a>Resize swap file
 To resize, first create a new swap file. Substitute with size of the form '#G'. For example, for an 8GB swap file, use 8G. You can put this file anywhere you want, and name it whatever you want, so put it somewhere and name it something that makes sense. In this example, I'll use /mnt/swapfile.swap and a size of 4GB
 <pre><code>
   fallocate -l 4G /mnt/swapfile.swap
