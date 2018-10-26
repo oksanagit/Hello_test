@@ -44,7 +44,7 @@ Parts list:
 - microSD memory card 16GB or bigger 
 
  
- ## [Assemble the Hardware](#hardware)
+## [Assemble the Hardware](#hardware)
 
 
 ## [Copy Image onto microSD Card](#microSD) 
