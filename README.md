@@ -149,7 +149,7 @@ press y (for yes) for offers to correct the errors
 ## <a name="boot"></a> Your fist Boot  
 Connect a monitor, we used HDMI port, a mouse and keyboard. We used one USB dongle for both peripherals. When you power on the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
-<img src=https://github.com/oksanagit/images/IMG_1.JPG width="40%">
+<img src=images/IMG_1.JPG width="40%">
 
 - Select **Boot Manager**. Inside you have to choose legacy boot option. We have seen different screens for this step on identical board units we purchased at different times:
 
