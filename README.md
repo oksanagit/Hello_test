@@ -1,9 +1,9 @@
 
-# babyIOC
+# babyIOC                              
 Motivation of **_babyIOC_** is to create a portable small form factor control system solution for mobile experimental stations and test systems.  
 **_babyIOC_** is an easy to assemble, plug and play Debian server with deployed [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), compiled  [areaDetector]( https://github.com/areaDetector) package, and NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) Data Acquisition Suite. Prosilica sample IOC is deployed at /epics/iocs.  
 
-# Current Image details
+# Current Image           [**Download**](https://www.dropbox.com/sh/nsn1icyftd4e75c/AADsUkR9b_YcEeGP7rq7f8POa?dl=0)  
 - Debian Jessie
 - [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), which is built from [epicsdeb](https://github.com/epicsdeb) repository. 
 - areaDetector-3-3-1 with  
