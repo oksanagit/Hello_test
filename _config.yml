@@ -1,3 +1,15 @@
 theme: jekyll-theme-slate
-title: Take along babyIOC EPICS control system
+title: babyIOC portable EPICS control system
 decription: Instructions
+
+docs:
+  - title: Getting Started
+    children:
+      - title: "Quick-Start Guide"
+        url: /docs/quick-start-guide/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Installation"
+        url: /docs/installation/
+      - title: "Upgrading"
+        url: /docs/upgrading/
