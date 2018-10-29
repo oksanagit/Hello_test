@@ -1,15 +1,7 @@
 theme: jekyll-theme-slate
 title: babyIOC portable EPICS control system
 decription: Instructions
+easy_admin:
+  design:
+      menu:['user', 'product', {entity: 'Categiry', label:'Tags'}]
 
-docs:
-  - title: Getting Started
-    children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
