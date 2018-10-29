@@ -1,7 +1,7 @@
 <!--fixed-top-panel
 Example Navigation:
 fgsdhfgasjf
-
+-->
 <!--right-side-pane
 # babyIOC                              
 Motivation of **_babyIOC_** is to create a portable small form factor control system solution for mobile experimental stations and test systems.  
@@ -213,3 +213,4 @@ Finally, to make these changes persist across reboots, edit the file /etc/fstab 
 </code></pre>
 
 ## Enjoy!
+-->
