@@ -1,9 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Markdown site template</title>
+    <script src="document.min.js" userjs="user.js" icon="babyIOCdama.ico" id="DOC" onerror="var l=document.createElement('link'),s=document.createElement('script');l.rel='stylesheet';l.href='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css';l.id='bootstrap.css';l.auto='1';document.head.insertBefore(l,document.getElementById('DOC'));s.src='http://aplib.github.io/document.min.js';document.head.appendChild(s);"></script>
+</head>
+<body>
+    
 
-# babyIOC                              
+<!--header-panel
+# babyIOC    
+# Portable Control System in a Box
+Portable, small factor, affordable, control system with NSLS2 Debian repository, areaDetector-3-3-1 with EPICS7 PVA, bluesky is available for community via system image for UDOO x86 Ultra. $400 hardware and several hours to set up. Step-by-step instructions how to assemble UDOO hardware, and image download
+-->
+
+<!--left-side-panel
+   
+   * #### <span style="color:#0f0";>[**Download babyIOC Image**](https://www.dropbox.com/sh/nsn1icyftd4e75c/AADsUkR9b_YcEeGP7rq7f8POa?dl=0)</span>
+   
+<img title="babyIOC" src="babyIOCdama.jpg" width="100%">
+    
+* [**Why babyIOC?**](#babyIOC)
+* [**Why UDOO?**](#udoo)
+* [**What is on the image**](#image)
+* [**Hardware and Parts**](#hw)
+* [**Assemble HW Instructions**](#hardware)
+* [**Assemble HW Video**](#TBD)
+* [**Copy Image onto microSD Card**](#microSD) 
+* [**You are ready to boot!**](#boot)
+* [**Reconfigure network interfaces**](#network)
+* [**Changing the hostname**](#hostname)
+* [**Resize swap file**](#swap)
+
+### Credits
+<small>
+
+* *Oksana Ivashkevych* <sup>BNL</sup> vision, driver, babyIOC mother
+* *Thomas Smith* <sup>BNL</sup> sysadmin babyIOC father 
+* *Dennis Poshka* <sup>BNL</sup> babyIOC technician
+* *Leon Flaks* <sup>BNL</sup> image conditioning
+* *Thomas Caswell* <sup>BNL</sup> bluesky deployment
+* *Matt Cowan* <sup>BNL</sup> sysadmin help
+* *Kevin Peterson* <sup>ANL</sup> ideas for disc size expansion
+* *28ID1, Milinda Abeykoon, Julian Adams* <sup>BNL</sup> project support
+* *Christopher Stelmach* <sup>BNL</sup> added cutoff to a drawing. 
+
+</small>
+
+## References
+<small>
+- [EPICS Debian source](https://github.com/epicsdeb)
+- [NSLS2 EPICS Debian repository](https://epicsdeb.bnl.gov/debian/)
+- [areaDetector package](https://github.com/areaDetector/)
+- [UDOO x86 Ultra](https://shop.udoo.org/x86/udoo-x86-ultra.html)
+- [Contribution @ EPICS collaboration meeting 2018 in APS](https://epics.anl.gov/meetings/2018-06/talks/06-14/PM/7.11.pdf)
+</small>
+
+-->
+
+<!--content-panel
+## <a name="babyIOC"></a>Why babyIOC                              
 Motivation of **_babyIOC_** is to create a portable small form factor control system solution for mobile experimental stations and test systems.  
 **_babyIOC_** is an easy to assemble, plug and play Debian server with deployed [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), compiled  [areaDetector]( https://github.com/areaDetector) package, and NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) Data Acquisition Suite. Prosilica sample IOC is deployed at /epics/iocs.  
+  
+Building an EPICS Control System from scratch could be tedious, time consuming and challenging for beginners.
+We offer you an out of the box solution. When you buy and assemble this Single Board Computer, you can load our pre-created image onto microSD card, boot the discless babyIOC computer from this microSD card and build your EPICS iocs using prebuild libraries and packages. If the community finds this useful, we can add more modules, sample iocs to ease the learning curve, etc. The image also has NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) software deployed for those who are intersted to try it out.
 
-# Current Image           [**Download**](https://www.dropbox.com/sh/nsn1icyftd4e75c/AADsUkR9b_YcEeGP7rq7f8POa?dl=0)  
+## <a name="udoo"></a>Why [UDOO](https://www.udoo.org/udoo-x86/)   
+We have conducted a research, reviewing many vendors which offer small factor Single Board Computes(SBC) including **Beagleboard, RaspberryPI, BoundaryDevices, Nvidia, Hardkernel, PCengineering, EmbeddedArm, Udoo**.
+
+We have selected Udoo X86 Ultra[1], funded on Kickstarter in 2016. It is a diskless 64-bit architecture with a microSD card, x3 Gbit interfaces ( 1 plus 2 from daughter card), x4 core 2.56 GHz CPU, 8G RAM and costs ~$400 US.
+
+This hardware selection is compatible with NSLS2 standards and IT infrastructure and can be easily used at other facilities. Since babyIOC boots up from microSD card, additional systems can be created by simply acquiring the hardware and copping the system image onto SD card. 
+
+   
+## <a name="image"></a>Current Image           [**Download Image**](https://www.dropbox.com/sh/nsn1icyftd4e75c/AADsUkR9b_YcEeGP7rq7f8POa?dl=0)  
 - Debian Jessie
 - [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), which is built from [epicsdeb](https://github.com/epicsdeb) repository. 
 - areaDetector-3-3-1 with  
@@ -26,10 +97,7 @@ Motivation of **_babyIOC_** is to create a portable small form factor control sy
 
  
 
-## Introduction
-Building an EPICS Control System from scratch could be tedious, time consuming and challenging for beginners.
-We offer you an out of the box solution. When you buy and assemble this Single Board Computer, you can load our pre-created image onto microSD card, boot the discless babyIOC computer from this microSD card and build your EPICS iocs using prebuild libraries and packages. If the community finds this useful, we can add more modules, sample iocs to ease the learning curve, etc. The image also has NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) software deployed for those who are intersted to try it out.
- ## Hardware and parts
+## <a name="hw"></a>Hardware and parts
 We have conducted much research, reviewing many vendors which offer small factor Single Board Computes(SBC) including: Beagleboard, RaspberryPI, BoundaryDevices, Nvidia, Hardkernel, PCengineering, EmbeddedArm, and Udoo.  
   
 The selected hardware is [UDOO x86 Ultra board](https://shop.udoo.org/x86/udoo-x86-ultra.html), which can be enhanced with different daughter cards. In this project we use an ethernet daughter card, which adds 2 additional interfaces useful in any controls environment.  Though the hardware can be purchased from many distributors, we advise buying directly from [UDOO](https://shop.udoo.org/). They ship fast. 
@@ -44,35 +112,6 @@ Parts list:
 - microSD memory card 16GB or bigger 
 
  
-## [Assemble the Hardware](#hardware)
-
-
-## [Copy Image onto microSD Card](#microSD) 
-
-  
-## [You are ready to boot!](#boot)
-root -   "babyIOCroot"  
-iocuser -"$babyioc$"
-## [Reconfiguring network interfaces](#network)
-
-## References
-- [babyIOC contribution @ EPICS collaboration meeting 2018 in APS](https://epics.anl.gov/meetings/2018-06/talks/06-14/PM/7.11.pdf)
-- [EPICS Debian source](https://github.com/epicsdeb)
-- [NSLS2 EPICS Debian repository](https://epicsdeb.bnl.gov/debian/)
-- [areaDetector package](https://github.com/areaDetector/)
-
-## Credits
-* Oksana Ivashkevych (BNL) vision, driver, babyIOC mother
-* Thomas Smith (BNL) sysadmin babyIOC father 
-* Dennis Poshka (BNL) babyIOC technician
-* Leon Flaks (BNL) image conditioning, project hosting @[https://epicsdeb.bnl.gov/babyIOC](https://epicsdeb.bnl.gov/babyIOC/)
-* Thomas Caswell (BNL) bluesky deployment
-* Matt Cowan (BNL) sysadmin help
-* Kevin Peterson (ANL) ideas for disc size expansion
-* 28ID1, Milinda Abeykoon, Julian Adams (BNL) project support
-* Christopher Stelmach (BNL) drawing modification to add a cutoff  
-  
-# DETAIL SECTION
 ##  <a name="hardware"></a> Assemble the hardware. 
 Vendor's instructions on how to assemble the hardware can be found [here](https://www.udoo.org/docs-x86/Hardware_&_Accessories/Official_Accessories.html). Vendor's metal case is desiged to hold a board without accesories. In order to use this metal case with Ethernet daughter board, one needs to cut an opening in the back side. The original drawing can be found [here](http://download.udoo.org/files//UDOO_X86/mechanical_specs/UDOO_X86_metal_case_drawing.pdf). The needed cut out is indicated on [UDOO_X86_metal_case_drawing-MODIFIED.pdf](UDOO_X86_metal_case_drawing-MODIFIED.pdf). 
 
@@ -149,24 +188,29 @@ press y (for yes) for offers to correct the errors
 ## <a name="boot"></a> Your fist Boot  
 Connect a monitor, we used HDMI port, a mouse and keyboard. We used one USB dongle for both peripherals. When you power on the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
-<img src="images/IMG_1.JPG" width="80%">
+<img src="../images/IMG_1.JPG" width="80%">
 
 - Select **Boot Manager**. Inside you have to choose legacy boot option. We have seen different screens for this step on identical board units we purchased at different times:
 
 <div class="row">
   <div class="column">
-     <img title="Boot Config 1" src="images/IMG_2.JPG" width="80%">  
+     <img title="Boot Config 1" src="../images/IMG_2.JPG" width="80%">  
   </div>
  <div class="column">
      _
   </div>
   <div class="column">
-    <img title="Boot Config 2" src="images/IMG_3.JPG" width="80%">
+    <img title="Boot Config 2" src="../images/IMG_3.JPG" width="80%">
   </div>
   </div>
 
 Your boot is set!
 ## <a name="network"></a> Reconfiguring network interfaces
+  
+  User names:
+root -   "babyIOCroot"  
+iocuser -"$babyioc$"  
+   
 **babyIOC** image has DHCP configured interfaces, you can reconfigure them to your taste in /etc/network/interfaces. 
 
 In any case delete content in  
@@ -174,7 +218,7 @@ In any case delete content in
 
 This file is being created by operating system and includes mac address of your Ethernet cards. Since you have a new hardware, new interfaces will be created.
 
-## Changing the host name:
+## <a name="hostname"></a>Changing the host name:
 
 -Edit the hostname in these files
 /etc/hostname
@@ -210,3 +254,9 @@ Finally, to make these changes persist across reboots, edit the file /etc/fstab 
 
 ## Enjoy!
 
+-->
+
+
+<noscript><div class="alert alert-warning">This Website requires your browser to be JavaScript enabled.</div></noscript>
+</body>
+</html>
