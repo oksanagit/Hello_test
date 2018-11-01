@@ -1,5 +1,6 @@
 
-# babyIOC                              
+# babyIOC  
+#### project website [https://oksanagit.github.io/babyIOC](https://oksanagit.github.io/babyIOC)
 Motivation of **_babyIOC_** is to create a portable small form factor control system solution for mobile experimental stations and test systems.  
 **_babyIOC_** is an easy to assemble, plug and play Debian server with deployed [NSLS2 EPICS Debian distribution](https://epicsdeb.bnl.gov/debian/), compiled  [areaDetector]( https://github.com/areaDetector) package, and NSLS2 [bluesky](https://github.com/NSLS-II/bluesky) Data Acquisition Suite. Prosilica sample IOC is deployed at /epics/iocs.  
 
@@ -65,7 +66,7 @@ iocuser -"$babyioc$"
 * Oksana Ivashkevych (BNL) vision, driver, babyIOC mother
 * Thomas Smith (BNL) sysadmin babyIOC father 
 * Dennis Poshka (BNL) babyIOC technician
-* Leon Flaks (BNL) image conditioning, project hosting @[https://epicsdeb.bnl.gov/babyIOC](https://epicsdeb.bnl.gov/babyIOC/)
+* Leon Flaks (BNL) image conditioning
 * Thomas Caswell (BNL) bluesky deployment
 * Matt Cowan (BNL) sysadmin help
 * Kevin Peterson (ANL) ideas for disc size expansion
@@ -149,19 +150,19 @@ press y (for yes) for offers to correct the errors
 ## <a name="boot"></a> Your fist Boot  
 Connect a monitor, we used HDMI port, a mouse and keyboard. We used one USB dongle for both peripherals. When you power on the board, you may see the "no botable device" or another similar error. The bootloader needs to be changed. 
 - Keep pressing Esc button, while power is applied. 
-<img src="images/IMG_1.JPG" width="80%">
+<img src="docs/images/IMG_1.JPG" width="80%">
 
 - Select **Boot Manager**. Inside you have to choose legacy boot option. We have seen different screens for this step on identical board units we purchased at different times:
 
 <div class="row">
   <div class="column">
-     <img title="Boot Config 1" src="images/IMG_2.JPG" width="80%">  
+     <img title="Boot Config 1" src="docs/images/IMG_2.JPG" width="80%">  
   </div>
  <div class="column">
      _
   </div>
   <div class="column">
-    <img title="Boot Config 2" src="images/IMG_3.JPG" width="80%">
+    <img title="Boot Config 2" src="docs/images/IMG_3.JPG" width="80%">
   </div>
   </div>
 
